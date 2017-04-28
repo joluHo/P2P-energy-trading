@@ -1,0 +1,100 @@
+clear
+new Circuit.RefCircuit basekv=20.600000 pu=1.0 angle=0 phases=3
+set frequency=50.0
+
+// VSource components 
+new Vsource.ref_source phases=3 bus1=Node_00043.1.2.3 basekv=20.60 frequency=50.0 pu=1.00000 angle=0.00 r0=8.322385e-01 r1=8.322385e-01 x0=4.161192e+00 x1=4.161192e+00
+
+// Transformer models
+new Transformer.transformer00001 phases=3 windings=2 Buses=[Node_00043.1.2.3,Node_00001.1.2.3.4] Conns=[D,W] Kvs=[20.60,0.41] Kvas=[160.0,160.0] normHKVA=184.0 %Loadloss=1.798499e+00 %noloadloss=4.056794e-01 %imag=0.000000e+00 Xhl=4.100000e+00
+~ wdg=1 numtaps=3 tap=1.000000 maxtap=1.025000 mintap=0.975000
+~ wdg=2 rneut=0.000010 xneut=0.000010
+
+// Transformer components 
+
+// Line models
+new LineCode.LV_3_x_240_al___95_al_4 nphases=4 units=m Rmatrix=(1.348670e-04 2.697340e-05 2.697340e-05 6.814320e-05 | 2.697340e-05 1.348670e-04 2.697340e-05 6.814320e-05 | 2.697340e-05 2.697340e-05 1.348670e-04 6.814320e-05 | 6.814320e-05 6.814320e-05 6.814320e-05 3.407160e-04) Xmatrix=(1.848670e-04 3.697340e-05 3.697340e-05 7.814320e-05 | 3.697340e-05 1.848670e-04 3.697340e-05 7.814320e-05 | 3.697340e-05 3.697340e-05 1.848670e-04 7.814320e-05 | 7.814320e-05 7.814320e-05 7.814320e-05 3.907160e-04) Cmatrix=(2.546479e-01 -3.183099e-02 -3.183099e-02 -3.183099e-02 | -3.183099e-02 2.546479e-01 -3.183099e-02 -3.183099e-02 | -3.183099e-02 -3.183099e-02 2.546479e-01 -3.183099e-02 | -3.183099e-02 -3.183099e-02 -3.183099e-02 2.546479e-01) normamps=4004.000000
+
+// Line components 
+new Line.f01line00001 phases=4 bus1=Node_00002.1.2.3.4 bus2=Node_00009.1.2.3.4 units=m length=4 linecode=LV_3_x_240_al___95_al_4
+new Line.f01line00002 phases=4 bus1=Node_00009.1.2.3.4 bus2=Node_00007.1.2.3.4 units=m length=27 linecode=LV_3_x_240_al___95_al_4
+new Line.f01line00003 phases=4 bus1=Node_00007.1.2.3.4 bus2=Node_00008.1.2.3.4 units=m length=30 linecode=LV_3_x_240_al___95_al_4
+new Line.f01line00004 phases=4 bus1=Node_00008.1.2.3.4 bus2=Node_00010.1.2.3.4 units=m length=60 linecode=LV_3_x_240_al___95_al_4
+new Line.f01line00005 phases=4 bus1=Node_00010.1.2.3.4 bus2=Node_00014.1.2.3.4 units=m length=15 linecode=LV_3_x_240_al___95_al_4
+new Line.f01line00006 phases=4 bus1=Node_00014.1.2.3.4 bus2=Node_00013.1.2.3.4 units=m length=36 linecode=LV_3_x_240_al___95_al_4
+new Line.f01line00007 phases=4 bus1=Node_00013.1.2.3.4 bus2=Node_00012.1.2.3.4 units=m length=75 linecode=LV_3_x_240_al___95_al_4
+new Line.f01line00008 phases=4 bus1=Node_00012.1.2.3.4 bus2=Node_00011.1.2.3.4 units=m length=100 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00009 phases=4 bus1=Node_00003.1.2.3.4 bus2=Node_00015.1.2.3.4 units=m length=46 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00010 phases=4 bus1=Node_00015.1.2.3.4 bus2=Node_00016.1.2.3.4 units=m length=2 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00011 phases=4 bus1=Node_00016.1.2.3.4 bus2=Node_00020.1.2.3.4 units=m length=31 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00012 phases=4 bus1=Node_00020.1.2.3.4 bus2=Node_00018.1.2.3.4 units=m length=22 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00013 phases=4 bus1=Node_00018.1.2.3.4 bus2=Node_00019.1.2.3.4 units=m length=35 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00014 phases=4 bus1=Node_00019.1.2.3.4 bus2=Node_00017.1.2.3.4 units=m length=17 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00015 phases=4 bus1=Node_00017.1.2.3.4 bus2=Node_00021.1.2.3.4 units=m length=2 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00016 phases=4 bus1=Node_00021.1.2.3.4 bus2=Node_00023.1.2.3.4 units=m length=14 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00017 phases=4 bus1=Node_00023.1.2.3.4 bus2=Node_00024.1.2.3.4 units=m length=15 linecode=LV_3_x_240_al___95_al_4
+new Line.f02line00018 phases=4 bus1=Node_00024.1.2.3.4 bus2=Node_00022.1.2.3.4 units=m length=13 linecode=LV_3_x_240_al___95_al_4
+
+// Switch models
+new LineCode.switch_linecode_LV_4 nphases=4 r1=1.000000e-10 x1=1.000000e-10 c1=1.000000e-10 r0=1.000000e-10 x0=1.000000e-10 c0=1.000000e-10 normamps=10000.000000
+
+// Switch components 
+new Line.f01switch00001 phases=4 bus1=Node_00001.1.2.3.4 bus2=Node_00002.1.2.3.4 linecode=switch_linecode_LV_4 switch=y
+new Line.f02switch00002 phases=4 bus1=Node_00001.1.2.3.4 bus2=Node_00003.1.2.3.4 linecode=switch_linecode_LV_4 switch=y
+
+// Load components 
+new Load.f02load00048 phases=1 bus1=Node_00015.2.4 conn=w kw=1.320647 kvar=0.528259 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00049 phases=1 bus1=Node_00015.3.4 conn=w kw=0.977694 kvar=0.391078 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00051 phases=1 bus1=Node_00015.2.4 conn=w kw=0.770386 kvar=0.308154 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00047 phases=1 bus1=Node_00020.3.4 conn=w kw=0.709478 kvar=0.283791 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00042 phases=1 bus1=Node_00018.3.4 conn=w kw=0.767366 kvar=0.306946 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00043 phases=1 bus1=Node_00018.1.4 conn=w kw=0.910531 kvar=0.364213 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00046 phases=1 bus1=Node_00018.1.4 conn=w kw=0.690036 kvar=0.276014 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00040 phases=1 bus1=Node_00019.1.4 conn=w kw=0.899294 kvar=0.359717 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00041 phases=1 bus1=Node_00019.1.4 conn=w kw=0.844180 kvar=0.337672 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00039 phases=1 bus1=Node_00017.2.4 conn=w kw=0.704848 kvar=0.281939 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00032 phases=1 bus1=Node_00017.3.4 conn=w kw=0.857048 kvar=0.342819 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00035 phases=1 bus1=Node_00023.3.4 conn=w kw=0.769988 kvar=0.307995 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00037 phases=1 bus1=Node_00023.1.4 conn=w kw=1.439919 kvar=0.575968 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00026 phases=1 bus1=Node_00024.3.4 conn=w kw=1.071390 kvar=0.428556 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00028 phases=1 bus1=Node_00024.3.4 conn=w kw=1.416164 kvar=0.566466 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00022 phases=1 bus1=Node_00022.2.4 conn=w kw=1.458615 kvar=0.583446 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f02load00025 phases=1 bus1=Node_00022.2.4 conn=w kw=0.775769 kvar=0.310308 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00010 phases=1 bus1=Node_00007.3.4 conn=w kw=0.754578 kvar=0.301831 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00011 phases=1 bus1=Node_00014.3.4 conn=w kw=0.792445 kvar=0.316978 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00012 phases=1 bus1=Node_00007.1.4 conn=w kw=1.328264 kvar=0.531306 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00013 phases=1 bus1=Node_00007.3.4 conn=w kw=0.857163 kvar=0.342865 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00009 phases=1 bus1=Node_00008.1.4 conn=w kw=0.684292 kvar=0.273717 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00008 phases=1 bus1=Node_00014.1.4 conn=w kw=0.844442 kvar=0.337777 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00006 phases=1 bus1=Node_00013.3.4 conn=w kw=0.777670 kvar=0.311068 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00007 phases=1 bus1=Node_00013.2.4 conn=w kw=1.432084 kvar=0.572834 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00004 phases=1 bus1=Node_00012.2.4 conn=w kw=1.342448 kvar=0.536979 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00005 phases=1 bus1=Node_00012.2.4 conn=w kw=0.669650 kvar=0.267860 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00001 phases=1 bus1=Node_00011.1.4 conn=w kw=1.428455 kvar=0.571382 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00002 phases=1 bus1=Node_00011.2.4 conn=w kw=0.667434 kvar=0.266974 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00003 phases=1 bus1=Node_00011.3.4 conn=w kw=0.852821 kvar=0.341129 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00016 phases=1 bus1=Node_00009.2.4 conn=w kw=0.804309 kvar=0.321723 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00019 phases=1 bus1=Node_00009.3.4 conn=w kw=1.409881 kvar=0.563953 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+new Load.f01load00020 phases=1 bus1=Node_00009.2.4 conn=w kw=0.895708 kvar=0.358283 numcust=1 kv=0.236714 Vminpu=0.55 Vmaxpu=1.45 model=1
+
+// Generator components 
+new Generator.f02generator00002 phases=1 bus1=Node_00024.3.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.f02generator00001 phases=1 bus1=Node_00022.2.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_7 phases=1 bus1=Node_00013.3.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_8 phases=1 bus1=Node_00012.2.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_9 phases=1 bus1=Node_00009.2.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_12 phases=1 bus1=Node_00007.1.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_13 phases=1 bus1=Node_00023.1.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_17 phases=1 bus1=Node_00018.1.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_20 phases=1 bus1=Node_00011.3.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_22 phases=1 bus1=Node_00015.2.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_1 phases=1 bus1=Node_00024.3.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_2 phases=1 bus1=Node_00017.3.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_4 phases=1 bus1=Node_00011.1.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_6 phases=1 bus1=Node_00014.3.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_10 phases=1 bus1=Node_00022.2.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_11 phases=1 bus1=Node_00019.1.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+new Generator.generator_14 phases=1 bus1=Node_00013.2.4 conn=w kva=1.000000 kw=1.000000e+00 kvar=0.000000e+00 minkvar=-1.000000e+00 maxkvar=1.000000e+00 Vminpu=0.75 Vmaxpu=1.25 kv=0.236714
+
+// Reference meter
+New EnergyMeter.em_transformer00001 Transformer.transformer00001
